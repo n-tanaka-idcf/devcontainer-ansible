@@ -1,0 +1,60 @@
+{
+  "name": "dev-container",
+  "dockerFile": "Dockerfile",
+  "containerEnv": {
+    "TZ": "Asia/Tokyo"
+  },
+  "runArgs": [
+    "--init"
+  ],
+  "workspaceFolder": "/home/vscode/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/workspace,type=bind,consistency=cached",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.ansible",
+        "ms-python.python",
+        "ms-python.black-formatter",
+        // "ms-python.mypy-type-checker",
+        "matangover.mypy",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "charliermarsh.ruff",
+        "njpwerner.autodocstring",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        // Editor
+        "editor.formatOnSave": true,
+        // Files
+        "files.insertFinalNewline": true,
+        // Ansible
+        "ansible.python.interpreterPath": "python3",
+        // Python
+        "python.defaultInterpreterPath": "python3",
+        "python.analysis.completeFunctionParens": true,
+        "python.analysis.typeCheckingMode": "strict",
+        "python.analysis.diagnosticMode": "workspace",
+        "python.languageServer": "Pylance",
+        // Python-Mypy
+        // "mypy.runUsingActiveInterpreter": true,
+        // Python-Black
+        "black-formatter.args": [
+          "--line-length=79",
+          "--preview"
+        ],
+        "[python]": {
+          "editor.tabSize": 4,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+            "source.fixAll": true
+          },
+          "editor.defaultFormateer": "ms-python.black-formatter"
+        }
+      },
+      "autoDocstring.docstringFormat": "numpy",
+      "files.associations": {
+        "*.yml": "ansible"
+      }
+    }
+  }
+}

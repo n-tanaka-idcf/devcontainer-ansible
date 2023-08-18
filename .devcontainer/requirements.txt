@@ -1,0 +1,8 @@
+ansible==8.3.0
+ansible-lint==6.17.2
+# molecule[docker]==4.0.4
+# pytest-testinfra==7.0.0
+mypy
+# flake8
+# black
+# isort
